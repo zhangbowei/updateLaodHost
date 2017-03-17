@@ -10,7 +10,9 @@ function doCommand(res, password) {
     const unzip = [
         'unzip -o -P',
         res,
-        record.hostsLocation
+        record.hostsLocation,
+        '-d',
+        record.rootLocation
     ].join(' ');
     const backup = [
         credit,
