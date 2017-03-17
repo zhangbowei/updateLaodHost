@@ -1,0 +1,23 @@
+{
+  "name": "wordtocms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
+  },
+  "author": "zhangbowei",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^0.19.0",
+    "shelljs": "^0.7.7",
+    "superagent": "^1.8.5",
+    "yargs": "^7.0.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://git.oschina.net/iStriver/updateLaodHost.git"
+  }
+}
