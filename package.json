@@ -1,6 +1,7 @@
 {
   "name": "updatelaodhost",
-  "version": "1.0.0",
+  "version": "1.0.4",
+  "bin" : "./bin/updatelaodhost.js",
   "description": "",
   "main": "src/index.js",
   "scripts": {
