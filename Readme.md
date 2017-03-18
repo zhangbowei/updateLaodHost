@@ -1,16 +1,22 @@
+##Install
+```
+npm i updatelaodhost -g
+```
 ##Method 1:
 ```
-node src/index.js --url=https://laod.cn --pasword=???
+
+updatelaodhost --url=https://??? --pasword=???
 ```
 ##Method 2:
-use default url
+use default url(https://laod.cn)
 ```
-node src/index.js  --password=???
+updatelaodhost  --password=???
 ```
 ##Method 3:
 use default url and Export(path)
 ```
 export SUDO_PASSWORD='???'
-node src/index.js
+
+updatelaodhost
 ```
 
