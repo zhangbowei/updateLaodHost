@@ -33,7 +33,7 @@ const data = (function () {
         dom = $('.scbutton.green').slice(-1).eq(0)
         infor.version = dom.text().match(/\s(\d+?)-/)[1];
         infor.address = dom.attr('href');
-        infor.password = dom[0].next.data.match(/(\w+)$/)[1];
+        infor.password = dom[0].next.data.match(/：(\S+)$/)[1];
     }
     function getInfor() {
         return infor;
