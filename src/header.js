@@ -27,13 +27,18 @@ const link = (function () {
 const data = (function () {
     let infor = {};
     function setInfor(s) {
-        const $ = cheerio.load(s);
-        let dom;
+        // const $ = cheerio.load(s);
+        // let dom;
 
-        dom = $('.scbutton.green').slice(-1).eq(0)
-        infor.version = dom.text().match(/\s(\d+?)-/)[1];
-        infor.address = dom.attr('href');
-        infor.password = dom[0].next.data.match(/：(\S+)$/)[1];
+        // dom = $('.scbutton.green').slice(-1).eq(0)
+        // infor.version = dom.text().match(/\s(\d+?)-/)[1];
+        // infor.address = dom.attr('href');
+        // infor.password = dom[0].next.data.match(/：(\S+)$/)[1];
+        const res = s.match(/<p>([^<]*?老D服务器[^<]*?)</)[1];
+
+        infor.address = res.match(/(http\S+)/)[1];
+        infor.version = res.match(/\s(\d+)/)[1];
+        infor.password = res.match(/：(\S+)/)[1];
     }
     function getInfor() {
         return infor;
@@ -46,7 +51,7 @@ const data = (function () {
 })();
 
 function parseHost(s) {
-    const host = s.match(/href="(.*?)".*?Google hosts/)[1];
+    const host = s.match(/a href="([^<]*?)"[^<]*?Google hosts/)[1];
     return host;
 }
 

@@ -51,7 +51,7 @@ function getResourcePage(res) {
 }
 
 function getRefreshPage(res) {
-    header.setAddress(res.text.match(/url='(.*?)'/)[1]);
+    header.setAddress(header.getInfor().address);
 
     return makeReqTemplate();
 }
