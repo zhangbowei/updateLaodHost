@@ -1,3 +1,3 @@
 const entry = require('./entry');
-entry();
+// entry();
 module.exports = entry;
