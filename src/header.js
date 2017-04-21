@@ -28,16 +28,12 @@ const data = (function () {
     let infor = {};
     function setInfor(s) {
         const $ = cheerio.load(s);
-        const dom = $('span[style="color: #ff0000; background-color: #ffff00;"]').parent();
-        const code = dom.html();
-        const res = unescape(code.replace(/&#x/g, '%u').replace(/;/g, ''))
-        // infor.version = dom.text().match(/\s(\d+?)-/)[1];
-        // infor.address = dom.attr('href');
-        // infor.password = dom[0].next.data.match(/：(\S+)$/)[1];
+        const title = $('#button_file > .buttons').html();
+        const text = $('span[style="color: #3366ff;"]').text();
 
-        infor.address = res.match(/(http\S+)/)[1];
-        infor.version = res.match(/\s(\d+)/)[1];
-        infor.password = res.match(/：(\S+)/)[1];
+        infor.address = title.match(/"(http\S+)"/)[1];
+        infor.version = infor.address.match(/\/(\d+)\/$/)[1];
+        infor.password = text.match(/密码：(\S+)/)[1];
     }
     function getInfor() {
         return infor;
