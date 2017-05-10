@@ -7,7 +7,7 @@ npm i updatelaodhost -g
 ## Method 1:
 
 ```
-updatelaodhost --url=https://??? --pasword=???
+updatelaodhost --url=https://??? --password=???
 ```
 
 ## Method 2:
